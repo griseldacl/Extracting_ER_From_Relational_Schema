@@ -10,17 +10,11 @@ using System.Windows.Forms;
 
 namespace ExtractingERFromRelational
 {
-    public partial class ExtractingERMainUI : Form
+    public partial class AddRelationForm : Form
     {
-        public ExtractingERMainUI()
+        public AddRelationForm()
         {
             InitializeComponent();
-        }
-
-        private void addRelationButton_Click(object sender, EventArgs e)
-        {
-            AddRelationForm newRelation = new AddRelationForm();
-            newRelation.ShowDialog();
         }
     }
 }
