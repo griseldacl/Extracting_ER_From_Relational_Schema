@@ -18,6 +18,13 @@ namespace ExtractingERFromRelational
         public AddRelationForm()
         {
             InitializeComponent();
+
+            //NEW ATTRIBUTE TYPE COMBO BOX
+            newAttributeTypeComboBox.Items.Add("VARCHAR");
+            newAttributeTypeComboBox.Items.Add("INT");
+            newAttributeTypeComboBox.Items.Add("STRING");
+            newAttributeTypeComboBox.Items.Add("DATE");
+
             newRelation = new Relation();
         }
 
