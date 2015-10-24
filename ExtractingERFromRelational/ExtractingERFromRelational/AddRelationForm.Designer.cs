@@ -29,18 +29,18 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.relationNameTextBox = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.newAttributeNameTextBox = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.newAttributeTypeComboBox = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.listBox1 = new System.Windows.Forms.ListBox();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
+            this.setAsPrimaryKeyButton = new System.Windows.Forms.Button();
+            this.deleteAttributeButton = new System.Windows.Forms.Button();
+            this.addNewAttributeButton = new System.Windows.Forms.Button();
+            this.attributesListBox = new System.Windows.Forms.ListBox();
+            this.addRelationButton = new System.Windows.Forms.Button();
+            this.cancelButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -52,12 +52,12 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Relation Name";
             // 
-            // textBox1
+            // relationNameTextBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(96, 21);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(310, 20);
-            this.textBox1.TabIndex = 1;
+            this.relationNameTextBox.Location = new System.Drawing.Point(96, 21);
+            this.relationNameTextBox.Name = "relationNameTextBox";
+            this.relationNameTextBox.Size = new System.Drawing.Size(310, 20);
+            this.relationNameTextBox.TabIndex = 1;
             // 
             // label2
             // 
@@ -68,12 +68,12 @@
             this.label2.TabIndex = 2;
             this.label2.Text = "Add Attribute";
             // 
-            // textBox2
+            // newAttributeNameTextBox
             // 
-            this.textBox2.Location = new System.Drawing.Point(96, 55);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(146, 20);
-            this.textBox2.TabIndex = 3;
+            this.newAttributeNameTextBox.Location = new System.Drawing.Point(96, 55);
+            this.newAttributeNameTextBox.Name = "newAttributeNameTextBox";
+            this.newAttributeNameTextBox.Size = new System.Drawing.Size(146, 20);
+            this.newAttributeNameTextBox.TabIndex = 3;
             // 
             // label3
             // 
@@ -84,19 +84,13 @@
             this.label3.TabIndex = 4;
             this.label3.Text = "Type";
             // 
-            // comboBox1
+            // newAttributeTypeComboBox
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "VARCHAR",
-            "DATE",
-            "INT",
-            "STRING",
-            "REAL"});
-            this.comboBox1.Location = new System.Drawing.Point(285, 55);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 5;
+            this.newAttributeTypeComboBox.FormattingEnabled = true;
+            this.newAttributeTypeComboBox.Location = new System.Drawing.Point(285, 55);
+            this.newAttributeTypeComboBox.Name = "newAttributeTypeComboBox";
+            this.newAttributeTypeComboBox.Size = new System.Drawing.Size(121, 21);
+            this.newAttributeTypeComboBox.TabIndex = 5;
             // 
             // label4
             // 
@@ -107,82 +101,77 @@
             this.label4.TabIndex = 7;
             this.label4.Text = "Attributes";
             // 
-            // button1
+            // setAsPrimaryKeyButton
             // 
-            this.button1.Location = new System.Drawing.Point(251, 102);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(104, 31);
-            this.button1.TabIndex = 8;
-            this.button1.Text = "Set As Primary Key";
-            this.button1.UseVisualStyleBackColor = true;
+            this.setAsPrimaryKeyButton.Location = new System.Drawing.Point(251, 102);
+            this.setAsPrimaryKeyButton.Name = "setAsPrimaryKeyButton";
+            this.setAsPrimaryKeyButton.Size = new System.Drawing.Size(104, 31);
+            this.setAsPrimaryKeyButton.TabIndex = 8;
+            this.setAsPrimaryKeyButton.Text = "Set As Primary Key";
+            this.setAsPrimaryKeyButton.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // deleteAttributeButton
             // 
-            this.button2.Location = new System.Drawing.Point(251, 144);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(104, 31);
-            this.button2.TabIndex = 9;
-            this.button2.Text = "Delete Attribute";
-            this.button2.UseVisualStyleBackColor = true;
+            this.deleteAttributeButton.Location = new System.Drawing.Point(251, 144);
+            this.deleteAttributeButton.Name = "deleteAttributeButton";
+            this.deleteAttributeButton.Size = new System.Drawing.Size(104, 31);
+            this.deleteAttributeButton.TabIndex = 9;
+            this.deleteAttributeButton.Text = "Delete Attribute";
+            this.deleteAttributeButton.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // addNewAttributeButton
             // 
-            this.button3.Location = new System.Drawing.Point(412, 55);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 10;
-            this.button3.Text = "Add";
-            this.button3.UseVisualStyleBackColor = true;
+            this.addNewAttributeButton.Location = new System.Drawing.Point(412, 55);
+            this.addNewAttributeButton.Name = "addNewAttributeButton";
+            this.addNewAttributeButton.Size = new System.Drawing.Size(75, 23);
+            this.addNewAttributeButton.TabIndex = 10;
+            this.addNewAttributeButton.Text = "Add";
+            this.addNewAttributeButton.UseVisualStyleBackColor = true;
             // 
-            // listBox1
+            // attributesListBox
             // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Items.AddRange(new object[] {
-            "SSN",
-            "StudentName",
-            "DateOfBirth",
-            "Age",
-            "Degree"});
-            this.listBox1.Location = new System.Drawing.Point(96, 93);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(149, 95);
-            this.listBox1.TabIndex = 11;
+            this.attributesListBox.FormattingEnabled = true;
+            this.attributesListBox.Location = new System.Drawing.Point(96, 93);
+            this.attributesListBox.Name = "attributesListBox";
+            this.attributesListBox.Size = new System.Drawing.Size(149, 95);
+            this.attributesListBox.TabIndex = 11;
             // 
-            // button4
+            // addRelationButton
             // 
-            this.button4.Location = new System.Drawing.Point(189, 217);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
-            this.button4.TabIndex = 12;
-            this.button4.Text = "OK";
-            this.button4.UseVisualStyleBackColor = true;
+            this.addRelationButton.Location = new System.Drawing.Point(189, 217);
+            this.addRelationButton.Name = "addRelationButton";
+            this.addRelationButton.Size = new System.Drawing.Size(75, 23);
+            this.addRelationButton.TabIndex = 12;
+            this.addRelationButton.Text = "OK";
+            this.addRelationButton.UseVisualStyleBackColor = true;
             // 
-            // button5
+            // cancelButton
             // 
-            this.button5.Location = new System.Drawing.Point(270, 217);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(75, 23);
-            this.button5.TabIndex = 13;
-            this.button5.Text = "Cancel";
-            this.button5.UseVisualStyleBackColor = true;
+            this.cancelButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.cancelButton.Location = new System.Drawing.Point(270, 217);
+            this.cancelButton.Name = "cancelButton";
+            this.cancelButton.Size = new System.Drawing.Size(75, 23);
+            this.cancelButton.TabIndex = 13;
+            this.cancelButton.Text = "Cancel";
+            this.cancelButton.UseVisualStyleBackColor = true;
             // 
             // AddRelationForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(536, 252);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.listBox1);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.cancelButton);
+            this.Controls.Add(this.addRelationButton);
+            this.Controls.Add(this.attributesListBox);
+            this.Controls.Add(this.addNewAttributeButton);
+            this.Controls.Add(this.deleteAttributeButton);
+            this.Controls.Add(this.setAsPrimaryKeyButton);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.newAttributeTypeComboBox);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.newAttributeNameTextBox);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.relationNameTextBox);
             this.Controls.Add(this.label1);
             this.MaximizeBox = false;
             this.Name = "AddRelationForm";
@@ -196,17 +185,17 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox relationNameTextBox;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox newAttributeNameTextBox;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox newAttributeTypeComboBox;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.ListBox listBox1;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button setAsPrimaryKeyButton;
+        private System.Windows.Forms.Button deleteAttributeButton;
+        private System.Windows.Forms.Button addNewAttributeButton;
+        private System.Windows.Forms.ListBox attributesListBox;
+        private System.Windows.Forms.Button addRelationButton;
+        private System.Windows.Forms.Button cancelButton;
     }
 }
