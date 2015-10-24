@@ -10,8 +10,9 @@ namespace ExtractingERBusinessLogic
     {
         #region Variables
 
-        private string _relationName;
-        private Dictionary<string, Enums.AttributeType> _attributeDict;
+        public string relationName;
+        public string primaryKey;
+        public Dictionary<string, Enums.AttributeType> attributeDict;
 
         #endregion
 
@@ -19,8 +20,9 @@ namespace ExtractingERBusinessLogic
 
         public Relation()
         {
-            _relationName = string.Empty;
-            _attributeDict = new Dictionary<string, Enums.AttributeType>();
+            relationName = string.Empty;
+            primaryKey = string.Empty;
+            attributeDict = new Dictionary<string, Enums.AttributeType>();
         }
 
         #endregion

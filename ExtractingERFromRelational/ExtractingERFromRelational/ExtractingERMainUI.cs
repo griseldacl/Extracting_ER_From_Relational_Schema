@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ExtractingERBusinessLogic;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,13 @@ namespace ExtractingERFromRelational
 {
     public partial class ExtractingERMainUI : Form
     {
+
+        List<Relation> _masterListRelations;
+
         public ExtractingERMainUI()
         {
             InitializeComponent();
+            _masterListRelations = new List<Relation>();
         }
 
         private void addRelationButton_Click(object sender, EventArgs e)

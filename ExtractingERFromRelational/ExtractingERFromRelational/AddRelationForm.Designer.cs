@@ -144,6 +144,7 @@
             this.addRelationButton.TabIndex = 12;
             this.addRelationButton.Text = "OK";
             this.addRelationButton.UseVisualStyleBackColor = true;
+            this.addRelationButton.Click += new System.EventHandler(this.addRelationButton_Click);
             // 
             // cancelButton
             // 
