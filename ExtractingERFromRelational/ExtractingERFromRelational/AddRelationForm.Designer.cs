@@ -41,6 +41,8 @@
             this.attributesListBox = new System.Windows.Forms.ListBox();
             this.addRelationButton = new System.Windows.Forms.Button();
             this.cancelButton = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
+            this.primaryKeyDisplayLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -109,6 +111,7 @@
             this.setAsPrimaryKeyButton.TabIndex = 8;
             this.setAsPrimaryKeyButton.Text = "Set As Primary Key";
             this.setAsPrimaryKeyButton.UseVisualStyleBackColor = true;
+            this.setAsPrimaryKeyButton.Click += new System.EventHandler(this.setAsPrimaryKeyButton_Click);
             // 
             // deleteAttributeButton
             // 
@@ -118,6 +121,7 @@
             this.deleteAttributeButton.TabIndex = 9;
             this.deleteAttributeButton.Text = "Delete Attribute";
             this.deleteAttributeButton.UseVisualStyleBackColor = true;
+            this.deleteAttributeButton.Click += new System.EventHandler(this.deleteAttributeButton_Click);
             // 
             // addNewAttributeButton
             // 
@@ -127,6 +131,7 @@
             this.addNewAttributeButton.TabIndex = 10;
             this.addNewAttributeButton.Text = "Add";
             this.addNewAttributeButton.UseVisualStyleBackColor = true;
+            this.addNewAttributeButton.Click += new System.EventHandler(this.addNewAttributeButton_Click);
             // 
             // attributesListBox
             // 
@@ -156,11 +161,31 @@
             this.cancelButton.Text = "Cancel";
             this.cancelButton.UseVisualStyleBackColor = true;
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(395, 102);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(81, 13);
+            this.label5.TabIndex = 14;
+            this.label5.Text = "Primary Key :";
+            // 
+            // primaryKeyDisplayLabel
+            // 
+            this.primaryKeyDisplayLabel.AutoSize = true;
+            this.primaryKeyDisplayLabel.Location = new System.Drawing.Point(409, 120);
+            this.primaryKeyDisplayLabel.Name = "primaryKeyDisplayLabel";
+            this.primaryKeyDisplayLabel.Size = new System.Drawing.Size(0, 13);
+            this.primaryKeyDisplayLabel.TabIndex = 15;
+            // 
             // AddRelationForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(536, 252);
+            this.Controls.Add(this.primaryKeyDisplayLabel);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.cancelButton);
             this.Controls.Add(this.addRelationButton);
             this.Controls.Add(this.attributesListBox);
@@ -198,5 +223,7 @@
         private System.Windows.Forms.ListBox attributesListBox;
         private System.Windows.Forms.Button addRelationButton;
         private System.Windows.Forms.Button cancelButton;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label primaryKeyDisplayLabel;
     }
 }

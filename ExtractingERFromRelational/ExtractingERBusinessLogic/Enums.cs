@@ -6,16 +6,13 @@ using System.Threading.Tasks;
 
 namespace ExtractingERBusinessLogic
 {
-    public class Enums
+
+    public enum AttributeType
     {
-        public enum AttributeType
-        {
-            varchar,
-            str,
-            integer,
-            date,
-            real
-        }
-    
+        varchar,
+        str,
+        integer,
+        real,
+        date
     }
 }

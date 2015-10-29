@@ -14,7 +14,7 @@ namespace ExtractingERFromRelational
     public partial class ExtractingERMainUI : Form
     {
 
-        List<Relation> _masterListRelations;
+        public static List<Relation> _masterListRelations;
 
         public ExtractingERMainUI()
         {
@@ -27,5 +27,6 @@ namespace ExtractingERFromRelational
             AddRelationForm newRelation = new AddRelationForm();
             newRelation.ShowDialog();
         }
+
     }
 }

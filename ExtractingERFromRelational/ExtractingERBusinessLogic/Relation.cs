@@ -12,7 +12,7 @@ namespace ExtractingERBusinessLogic
 
         public string relationName;
         public string primaryKey;
-        public Dictionary<string, Enums.AttributeType> attributeDict;
+        public Dictionary<string, AttributeType> attributeDict;
 
         #endregion
 
@@ -22,7 +22,8 @@ namespace ExtractingERBusinessLogic
         {
             relationName = string.Empty;
             primaryKey = string.Empty;
-            attributeDict = new Dictionary<string, Enums.AttributeType>();
+            attributeDict = new Dictionary<string, AttributeType>();
+        
         }
 
         #endregion
