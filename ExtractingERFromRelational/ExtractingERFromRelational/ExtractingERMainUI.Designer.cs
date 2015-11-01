@@ -32,6 +32,7 @@
             this.addRelationButton = new System.Windows.Forms.ToolStripButton();
             this.panel1 = new System.Windows.Forms.Panel();
             this.relationsDataGrid = new System.Windows.Forms.DataGridView();
+            this.button1 = new System.Windows.Forms.Button();
             this.toolStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.relationsDataGrid)).BeginInit();
@@ -39,12 +40,13 @@
             // 
             // toolStrip1
             // 
+            this.toolStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.addRelationButton});
             this.toolStrip1.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow;
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(816, 25);
+            this.toolStrip1.Size = new System.Drawing.Size(1088, 27);
             this.toolStrip1.TabIndex = 0;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -54,7 +56,7 @@
             this.addRelationButton.Image = global::ExtractingERFromRelational.Properties.Resources.Add_Icon;
             this.addRelationButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.addRelationButton.Name = "addRelationButton";
-            this.addRelationButton.Size = new System.Drawing.Size(23, 22);
+            this.addRelationButton.Size = new System.Drawing.Size(24, 24);
             this.addRelationButton.Text = "Add Relation";
             this.addRelationButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.addRelationButton.Click += new System.EventHandler(this.addRelationButton_Click);
@@ -62,9 +64,10 @@
             // panel1
             // 
             this.panel1.Controls.Add(this.relationsDataGrid);
-            this.panel1.Location = new System.Drawing.Point(12, 67);
+            this.panel1.Location = new System.Drawing.Point(16, 82);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(791, 212);
+            this.panel1.Size = new System.Drawing.Size(1055, 261);
             this.panel1.TabIndex = 1;
             // 
             // relationsDataGrid
@@ -74,18 +77,31 @@
             this.relationsDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.relationsDataGrid.Dock = System.Windows.Forms.DockStyle.Fill;
             this.relationsDataGrid.Location = new System.Drawing.Point(0, 0);
+            this.relationsDataGrid.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.relationsDataGrid.Name = "relationsDataGrid";
             this.relationsDataGrid.ReadOnly = true;
-            this.relationsDataGrid.Size = new System.Drawing.Size(791, 212);
+            this.relationsDataGrid.Size = new System.Drawing.Size(1055, 261);
             this.relationsDataGrid.TabIndex = 0;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(400, 3);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 2;
+            this.button1.Text = "FK_TEST";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // ExtractingERMainUI
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(816, 537);
+            this.ClientSize = new System.Drawing.Size(1088, 661);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.toolStrip1);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MaximizeBox = false;
             this.Name = "ExtractingERMainUI";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -105,6 +121,7 @@
         private System.Windows.Forms.ToolStripButton addRelationButton;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.DataGridView relationsDataGrid;
+        private System.Windows.Forms.Button button1;
     }
 }
 
