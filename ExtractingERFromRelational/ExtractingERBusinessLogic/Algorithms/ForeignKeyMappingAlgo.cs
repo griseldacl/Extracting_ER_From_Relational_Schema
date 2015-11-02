@@ -27,7 +27,7 @@ namespace ExtractingERBusinessLogic.Algorithms
             //    }        
             //}
 
-            //working
+            //working sorry about i and j
             string[] arr = new string[masterListRelation.Count()];
             
             for (int i = 0; i <= masterListRelation.Count(); i++)
