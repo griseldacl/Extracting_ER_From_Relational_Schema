@@ -38,7 +38,7 @@ namespace ExtractingERBusinessLogic.Algorithms
                 {
                     if (masterListRelation.ElementAt(j).attributeDict.ContainsKey(arr[i]))
                     {
-                        //foreignKeyRelations.Add(masterListRelation.ElementAt(i).relationName, masterListRelation.ElementAt(j).relationName, arr[i]);
+                        // foreignKeyRelations.Add(masterListRelation.ElementAt(i).relationName, masterListRelation.ElementAt(j).relationName, arr[i]);
                     }
                 }
 
