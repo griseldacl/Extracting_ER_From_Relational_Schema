@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace ExtractingERBusinessLogic.Algorithms
 {
     public static class ForeignKeyMappingAlgo
@@ -30,7 +31,8 @@ namespace ExtractingERBusinessLogic.Algorithms
                             }
                         }
                     }
-                }              
+                }
+                
             }
 
             return foreignKeyRelations;
