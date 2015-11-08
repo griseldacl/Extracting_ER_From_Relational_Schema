@@ -8,41 +8,32 @@ using System.Threading.Tasks;
 namespace ExtractingERBusinessLogic.Algorithms
 {
     public static class ForeignKeyMappingAlgo
-    {
+    { 
         #region Public Static Methods
-        
-        public static List<Tuple<string,string>> CalculateForeignKeyRelations(List<Relation> masterListRelation)
+
+        public static List<Tuple<string,string,List<string>>> CalculateForeignKeyRelations(List<Relation> masterListRelation)
         {
-            List<Tuple<string, string>> foreignKeyRelations = new List<Tuple<string, string>>();
-            // Add code here to calculate the foreign key dependencies 
-
-
-            //not working: It is skipping line string PK and it is not entering the foreach loop
-            //string PK = null;
-            //foreach (Relation rel in masterListRelation)
-            //{
-            //    for (int i = 0; i <= masterListRelation.Count(); i++)
-            //    {
-            //        PK = masterListRelation.ElementAt(i).primaryKey;   //PK is not being updated
-            //    }        
-            //}
-
-            //working sorry about i and j
-            string[] arr = new string[masterListRelation.Count()];
-            
-            for (int i = 0; i <= masterListRelation.Count(); i++)
+            List<Tuple<string, string,List<string>>> foreignKeyRelations = new List<Tuple<string, string,List<string>>>();
+            // Add code here to calculate the foreign key dependencies
+            foreach(Relation rel in masterListRelation)
             {
-                arr[i] = masterListRelation.ElementAt(i).primaryKey;
-
-                for (int j = 1; j <= masterListRelation.Count(); j++)
+                foreach(KeyValuePair<string,AttributeType> kp1 in rel.attributeDict)
                 {
-                    if (masterListRelation.ElementAt(j).attributeDict.ContainsKey(arr[i]))
+                    for (int id = masterListRelation.IndexOf(rel) + 1, id < masterListRelation.Count, id++)
                     {
-                        // foreignKeyRelations.Add(masterListRelation.ElementAt(i).relationName, masterListRelation.ElementAt(j).relationName, arr[i]);
+                        foreach(KeyValuePair<string,AttributeType> kp2 in masterListRelation.ElementAt(id).attributeDict)
+                        {
+                            if (kp1.Equals(kp2))
+                            {
+                                if (masterListRelation.ElementAt(id).primaryKey.Contains(kp2))
+                                    foreignKeyRelations.Add(new Tuple<string, string, List<string>>(rel.relationName, masterListRelation.ElementAt(id),
+                                        new List<string>(kp1.Key)));
+                            }
+                        }
+
                     }
                 }
 
-            }
 
             return foreignKeyRelations;
         }
