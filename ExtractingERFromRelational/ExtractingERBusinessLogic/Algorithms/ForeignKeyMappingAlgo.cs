@@ -26,13 +26,11 @@ namespace ExtractingERBusinessLogic.Algorithms
                             {
                                 if (masterListRelation.ElementAt(id).primaryKey.Contains(kp2))
                                     foreignKeyRelations.Add(new Tuple<string, string, List<string>>(rel.relationName, masterListRelation.ElementAt(id),
-                                        new List<string>(kp1.Key)));
+                                        new List<string>(kp1.Key));
                             }
                         }
-
                     }
-                }
-                
+                }              
             }
 
             return foreignKeyRelations;
