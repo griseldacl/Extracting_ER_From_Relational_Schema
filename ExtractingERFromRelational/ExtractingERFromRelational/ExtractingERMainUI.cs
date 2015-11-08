@@ -116,8 +116,6 @@ namespace ExtractingERFromRelational
                     attributeConcat += kvp.Key + ",";
 
                 }
-
-
                 relationsDataGrid.Rows.Add(rel.relationName, rel.primaryKey, attributeConcat);
             }
         }

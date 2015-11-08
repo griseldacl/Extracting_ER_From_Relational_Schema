@@ -19,15 +19,19 @@ namespace ExtractingERBusinessLogic.Algorithms
             {
                 foreach(KeyValuePair<string,AttributeType> kp1 in rel.attributeDict)
                 {
-                    for (int id = masterListRelation.IndexOf(rel) + 1, id < masterListRelation.Count, id++)
+                    for (int id = masterListRelation.IndexOf(rel) + 1; id < masterListRelation.Count; id++)
                     {
                         foreach(KeyValuePair<string,AttributeType> kp2 in masterListRelation.ElementAt(id).attributeDict)
                         {
                             if (kp1.Equals(kp2))
                             {
-                                if (masterListRelation.ElementAt(id).primaryKey.Contains(kp2))
-                                    foreignKeyRelations.Add(new Tuple<string, string, List<string>>(rel.relationName, masterListRelation.ElementAt(id),
-                                        new List<string>(kp1.Key));
+                                if (masterListRelation.ElementAt(id).primaryKey.Contains(kp2.Key))
+                                {
+                                    List<string> foreignKeys = new List<string>();
+                                    foreignKeys.Add(kp1.Key);
+                                    foreignKeyRelations.Add(new Tuple<string, string, List<string>>
+                                        (rel.relationName, masterListRelation.ElementAt(id).relationName, foreignKeys));
+                                }
                             }
                         }
                     }
