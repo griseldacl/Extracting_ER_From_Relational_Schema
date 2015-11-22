@@ -17,6 +17,9 @@ namespace ExtractingERFromRelational
         public const string relNameColumnString = "RelationName";
         public const string primaryKeyColumnString = "PrimaryKey";
         public const string attributesColumnString = "Attributes";
+
+        List<Tuple<string, string, List<string>>> foreignKeyRelations = null;
+        
         #endregion
 
         #region Constructor
@@ -145,7 +148,13 @@ namespace ExtractingERFromRelational
 
         private void button1_Click(object sender, EventArgs e)
         {
-            ExtractingERBusinessLogic.Algorithms.ForeignKeyMappingAlgo.CalculateForeignKeyRelations(_masterListRelations);
+            List<Tuple<string, string, List<string>>> fkRelations = ExtractingERBusinessLogic.Algorithms.ForeignKeyMappingAlgo.CalculateForeignKeyRelations(_masterListRelations);
+
+            ForeignKeyUserResolutionForm newForm = new ForeignKeyUserResolutionForm(fkRelations);
+            newForm.ShowDialog();
+
+            foreignKeyRelations = newForm.foreignKeyRel;
+
         }
-}
+    }
 }
