@@ -145,7 +145,7 @@ namespace ExtractingERFromRelational
                 // Set the new Relation Members
                 newRelation.relationName = relationNameTextBox.Text;
                 newRelation.attributeDict = attributeDict;
-                newRelation.primaryKey = primaryKey;
+                newRelation.primaryKeys.Add(primaryKey);
 
                 // Add it to the master List of Relations.
                 ExtractingERMainUI._masterListRelations.Add(newRelation);

@@ -35,7 +35,7 @@ namespace ExtractingERFromRelational
             //TEST RELATIONS
             Relation r1 = new Relation();
             r1.relationName = "Employee";
-            r1.primaryKey = "SSN";
+            r1.primaryKeys.Add("SSN");
             r1.attributeDict.Add("FName", AttributeType.varchar);
             r1.attributeDict.Add("LName", AttributeType.varchar);
             r1.attributeDict.Add("SSN", AttributeType.varchar);
@@ -46,7 +46,7 @@ namespace ExtractingERFromRelational
 
             Relation r2 = new Relation();
             r2.relationName = "Department";
-            r2.primaryKey = "DNumber";
+            r2.primaryKeys.Add("DNumber");
             r2.attributeDict.Add("DName", AttributeType.varchar);
             r2.attributeDict.Add("DNumber", AttributeType.integer);
             r2.attributeDict.Add("SSN", AttributeType.varchar);
@@ -54,13 +54,14 @@ namespace ExtractingERFromRelational
 
             Relation r3 = new Relation();
             r3.relationName = "Dept_Locations";
-            r3.primaryKey = "DNumber,Dlocation";
+            r3.primaryKeys.Add("DNumber");
+            r3.primaryKeys.Add("Dlocation");
             r3.attributeDict.Add("DNumber", AttributeType.integer);
             r3.attributeDict.Add("DLocation", AttributeType.integer);
 
             Relation r4 = new Relation();
             r4.relationName = "Project";
-            r4.primaryKey = "Pnumber";
+            r4.primaryKeys.Add("Pnumber");
             r4.attributeDict.Add("Pname", AttributeType.varchar);
             r4.attributeDict.Add("Pnumber", AttributeType.integer);
             r4.attributeDict.Add("Plocation", AttributeType.varchar);
@@ -68,14 +69,16 @@ namespace ExtractingERFromRelational
 
             Relation r5 = new Relation();
             r5.relationName = "Works_On";
-            r5.primaryKey = "SSN, Pnumber";
+            r5.primaryKeys.Add("SSN");
+            r5.primaryKeys.Add("Pnumber");
             r5.attributeDict.Add("SSN", AttributeType.varchar);
             r5.attributeDict.Add("Pnumber", AttributeType.integer);
             r5.attributeDict.Add("Hours", AttributeType.integer);
        
             Relation r6 = new Relation();
             r6.relationName = "Dependent";
-            r6.primaryKey = "SSN,Dependent_name";
+            r6.primaryKeys.Add("SSN");
+            r6.primaryKeys.Add("Dependent_name");
             r6.attributeDict.Add("SSN", AttributeType.varchar);
             r6.attributeDict.Add("Dependent_name", AttributeType.varchar);
             r6.attributeDict.Add("Sex", AttributeType.varchar);
@@ -119,7 +122,14 @@ namespace ExtractingERFromRelational
                     attributeConcat += kvp.Key + ",";
 
                 }
-                relationsDataGrid.Rows.Add(rel.relationName, rel.primaryKey, attributeConcat);
+
+                string primaryKeyConcat = string.Empty;
+                foreach (string s in rel.primaryKeys)
+                {
+                    primaryKeyConcat += s + ", ";
+                }
+
+                relationsDataGrid.Rows.Add(rel.relationName, primaryKeyConcat, attributeConcat);
             }
         }
 

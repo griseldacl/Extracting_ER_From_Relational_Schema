@@ -11,7 +11,7 @@ namespace ExtractingERBusinessLogic
         #region Variables
 
         public string relationName;
-        public string primaryKey;
+        public List<string> primaryKeys;
         public Dictionary<string, AttributeType> attributeDict;
 
         #endregion
@@ -21,7 +21,7 @@ namespace ExtractingERBusinessLogic
         public Relation()
         {
             relationName = string.Empty;
-            primaryKey = string.Empty;
+            primaryKeys = new List<string>();
             attributeDict = new Dictionary<string, AttributeType>();
         
         }

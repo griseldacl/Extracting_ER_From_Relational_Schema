@@ -41,6 +41,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Algorithms\ForeignKeyMappingAlgo.cs" />
+    <Compile Include="Algorithms\RelationIdentificationAlgo.cs" />
+    <Compile Include="Algorithms\WeakEntityIdentificationAlgo.cs" />
     <Compile Include="Enums.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Relation.cs" />

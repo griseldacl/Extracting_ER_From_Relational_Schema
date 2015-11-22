@@ -25,7 +25,15 @@ namespace ExtractingERBusinessLogic.Algorithms
                         {
                             if (kp1.Equals(kp2))
                             {
-                                if (masterListRelation.ElementAt(id).primaryKey.Contains(kp2.Key))
+                                bool success = false;
+                                foreach (string primaryKey in masterListRelation.ElementAt(id).primaryKeys)
+                                {
+                                    if (primaryKey.Contains(kp2.Key))
+                                    {
+                                        success = true;
+                                    }
+                                }
+                                if (success)
                                 {
                                     List<string> foreignKeys = new List<string>();
                                     foreignKeys.Add(kp1.Key);
