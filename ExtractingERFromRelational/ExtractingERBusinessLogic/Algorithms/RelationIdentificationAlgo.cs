@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace ExtractingERBusinessLogic.Algorithms
 {
-    public class RelationIdentificationAlgo
+    public static class RelationIdentificationAlgo
     {
+
     }
 }

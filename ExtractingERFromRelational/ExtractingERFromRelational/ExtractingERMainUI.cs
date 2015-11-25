@@ -1,4 +1,5 @@
 ﻿using ExtractingERBusinessLogic;
+using ExtractingERBusinessLogic.Algorithms;
 using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
@@ -160,6 +161,8 @@ namespace ExtractingERFromRelational
         private void button1_Click(object sender, EventArgs e)
         {
             List<Tuple<string, string, List<string>>> fkRelations = ExtractingERBusinessLogic.Algorithms.ForeignKeyMappingAlgo.CalculateForeignKeyRelations(_masterListRelations);
+
+            EditDistanceAlgo.CalculateEditDistance("abc", "bcd");
 
             ForeignKeyUserResolutionForm newForm = new ForeignKeyUserResolutionForm(fkRelations);
             newForm.ShowDialog();
