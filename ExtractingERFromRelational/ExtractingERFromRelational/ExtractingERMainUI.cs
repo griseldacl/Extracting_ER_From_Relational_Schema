@@ -38,18 +38,19 @@ namespace ExtractingERFromRelational
             r1.primaryKeys.Add("SSN");
             r1.attributeDict.Add("FName", AttributeType.varchar);
             r1.attributeDict.Add("LName", AttributeType.varchar);
-            r1.attributeDict.Add("SSN", AttributeType.varchar);
+            r1.attributeDict.Add("ssn", AttributeType.varchar);
             r1.attributeDict.Add("BDate", AttributeType.varchar);
             r1.attributeDict.Add("Address", AttributeType.varchar);
             r1.attributeDict.Add("DNumber", AttributeType.integer);
             r1.attributeDict.Add("Salary", AttributeType.integer);
+            r1.attributeDict.Add("Super_ssn", AttributeType.varchar);
 
             Relation r2 = new Relation();
             r2.relationName = "Department";
             r2.primaryKeys.Add("DNumber");
             r2.attributeDict.Add("DName", AttributeType.varchar);
             r2.attributeDict.Add("DNumber", AttributeType.integer);
-            r2.attributeDict.Add("SSN", AttributeType.varchar);
+            r2.attributeDict.Add("Mgr_ssn", AttributeType.varchar);
             r2.attributeDict.Add("Mgr_start_date", AttributeType.date);
 
             Relation r3 = new Relation();
