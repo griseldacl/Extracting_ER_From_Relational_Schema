@@ -64,6 +64,12 @@
     <Compile Include="ForeignKeyUserResolutionForm.Designer.cs">
       <DependentUpon>ForeignKeyUserResolutionForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="FunctionalDep.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FunctionalDep.Designer.cs">
+      <DependentUpon>FunctionalDep.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="AddRelationForm.resx">
@@ -74,6 +80,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ForeignKeyUserResolutionForm.resx">
       <DependentUpon>ForeignKeyUserResolutionForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FunctionalDep.resx">
+      <DependentUpon>FunctionalDep.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
