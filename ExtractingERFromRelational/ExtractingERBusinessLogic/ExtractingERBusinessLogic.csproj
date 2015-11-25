@@ -40,6 +40,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Algorithms\EditDistanceAlgo.cs" />
     <Compile Include="Algorithms\ForeignKeyMappingAlgo.cs" />
     <Compile Include="Algorithms\RelationIdentificationAlgo.cs" />
     <Compile Include="Algorithms\WeakEntityIdentificationAlgo.cs" />
