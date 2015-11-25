@@ -9,7 +9,7 @@ namespace ExtractingERBusinessLogic.Algorithms
     public static class WeakEntityIdentificationAlgo
     {
         public static List<Tuple<string, string>> CalculateWeakEntities(List<Relation> masterList)
-        {
+        { 
             List<Tuple<string, string>> weakEntities = new List<Tuple<string, string>>();
 
             for (int outerIndex = 0; outerIndex < masterList.Count; outerIndex++)
