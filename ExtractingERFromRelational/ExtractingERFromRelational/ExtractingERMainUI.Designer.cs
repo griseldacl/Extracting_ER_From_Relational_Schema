@@ -65,7 +65,7 @@
             // 
             this.panel1.Controls.Add(this.relationsDataGrid);
             this.panel1.Location = new System.Drawing.Point(16, 82);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1055, 261);
             this.panel1.TabIndex = 1;
@@ -77,7 +77,7 @@
             this.relationsDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.relationsDataGrid.Dock = System.Windows.Forms.DockStyle.Fill;
             this.relationsDataGrid.Location = new System.Drawing.Point(0, 0);
-            this.relationsDataGrid.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.relationsDataGrid.Margin = new System.Windows.Forms.Padding(4);
             this.relationsDataGrid.Name = "relationsDataGrid";
             this.relationsDataGrid.ReadOnly = true;
             this.relationsDataGrid.Size = new System.Drawing.Size(1055, 261);
@@ -85,9 +85,9 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(400, 3);
+            this.button1.Location = new System.Drawing.Point(400, 12);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.Size = new System.Drawing.Size(78, 34);
             this.button1.TabIndex = 2;
             this.button1.Text = "FK_TEST";
             this.button1.UseVisualStyleBackColor = true;
@@ -101,7 +101,7 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.toolStrip1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.Name = "ExtractingERMainUI";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
