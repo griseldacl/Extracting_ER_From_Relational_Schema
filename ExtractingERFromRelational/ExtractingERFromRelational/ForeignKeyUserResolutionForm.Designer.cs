@@ -39,12 +39,12 @@
             this.foreignKeyRelationListBox.FormattingEnabled = true;
             this.foreignKeyRelationListBox.Location = new System.Drawing.Point(12, 30);
             this.foreignKeyRelationListBox.Name = "foreignKeyRelationListBox";
-            this.foreignKeyRelationListBox.Size = new System.Drawing.Size(411, 303);
+            this.foreignKeyRelationListBox.Size = new System.Drawing.Size(668, 303);
             this.foreignKeyRelationListBox.TabIndex = 0;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(105, 349);
+            this.button1.Location = new System.Drawing.Point(215, 349);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(110, 23);
             this.button1.TabIndex = 1;
@@ -54,7 +54,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(239, 348);
+            this.button2.Location = new System.Drawing.Point(366, 349);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 2;
@@ -75,7 +75,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(446, 401);
+            this.ClientSize = new System.Drawing.Size(692, 401);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);

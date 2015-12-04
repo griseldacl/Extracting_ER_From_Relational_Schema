@@ -11,6 +11,66 @@ namespace ExtractingERBusinessLogic.Algorithms
     { 
         #region Public Static Methods
 
+
+        public static List<Tuple<string, string, string, string>> CalculateForeignKeys(List<Relation> masterListRelation)
+        {
+            List<Tuple<string, string, string, string>> foreignKeyRelations = new List<Tuple<string, string, string, string>>();
+
+            foreach(Relation rel in masterListRelation)
+            {
+                // SELF REFERENCE PORTION
+               //1. Take the primary Keys and compare with own attributes
+               foreach(string primaryKey in rel.primaryKeys)
+                {
+                    //Go through each of the attributes and see if its duplicated
+                    foreach(KeyValuePair<string, AttributeType> attribute in rel.attributeDict)
+                    {
+                        // The attribute should contain a portion of its name as the primary key
+                        if((attribute.Key.Equals(primaryKey) == false)&&
+                            (attribute.Key.Contains(primaryKey) == true))
+                        {
+                            Tuple<string, string, string, string> newTuple = new Tuple<string, string, string, string>(rel.relationName, rel.relationName, primaryKey, attribute.Key);
+                            foreignKeyRelations.Add(newTuple);
+                        }
+
+                    }
+                }
+
+                // For Other Relations
+                for (int index = 0; index < masterListRelation.Count; index++)
+                {
+                    Relation rel2 = masterListRelation.ElementAt(index);
+                    if (rel2.Equals(rel)) continue;
+                    else
+                    {
+                        //For each attribute
+                        foreach (KeyValuePair<string, AttributeType> attribute in rel.attributeDict)
+                        {
+                            foreach (string primaryKey in rel2.primaryKeys)
+                            {
+                                if (attribute.Key.Contains(primaryKey))
+                                {
+                                    Tuple<string, string, string, string> newTuple = new Tuple<string, string, string, string>
+                                        (rel2.relationName, rel.relationName, primaryKey, attribute.Key);
+
+                                    foreignKeyRelations.Add(newTuple);
+                                }
+                            }
+
+                        }
+
+                    }
+
+                }
+
+            }
+
+            return foreignKeyRelations;
+
+        }
+
+
+
         public static List<Tuple<string,string,List<string>>> CalculateForeignKeyRelations(List<Relation> masterListRelation)
         {
             List<Tuple<string, string,List<string>>> foreignKeyRelations = new List<Tuple<string, string,List<string>>>();

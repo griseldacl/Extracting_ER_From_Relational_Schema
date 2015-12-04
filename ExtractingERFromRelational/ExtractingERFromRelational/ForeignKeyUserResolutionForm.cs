@@ -12,23 +12,17 @@ namespace ExtractingERFromRelational
 {
     public partial class ForeignKeyUserResolutionForm : Form
     {
-        public List<Tuple<string, string, List<string>>> foreignKeyRel;
+        public List<Tuple<string, string, string, string>> foreignKeyRel;
 
-        public ForeignKeyUserResolutionForm(List<Tuple<string, string, List<string>>> foreignKeyRelations)
+        public ForeignKeyUserResolutionForm(List<Tuple<string, string, string, string>> foreignKeyRelations)
         {
             InitializeComponent();
 
             foreignKeyRel = foreignKeyRelations;
-            foreach(Tuple<string, string, List<string>> value in foreignKeyRel)
+            foreach(Tuple<string, string, string, string> value in foreignKeyRel)
             {
-                string relatedFields = string.Empty;
-                foreach(string s in value.Item3)
-                {
-                    relatedFields += s + ",";
 
-                }
-
-                string output = value.Item1 + ", " + value.Item2 + ",  " + relatedFields;
+                string output = value.Item1 + ", " + value.Item2 + ", Primary Key =  " + value.Item3 + ", Similar Attribute in Relation 2 = " + value.Item4;
                 foreignKeyRelationListBox.Items.Add(output);
             }
         }
@@ -38,11 +32,12 @@ namespace ExtractingERFromRelational
             string selectedMapping = foreignKeyRelationListBox.SelectedItem.ToString();
             List<string> fields = selectedMapping.Split(',').ToList();
 
-            Tuple<string, string, List<string>> foundValue = null;
+            Tuple<string, string, string, string> foundValue = null;
 
-            foreach (Tuple<string, string, List<string>> value in foreignKeyRel)
+            foreach (Tuple<string, string, string, string> value in foreignKeyRel)
             {
-                if(value.Item1 == fields.ElementAt(0) && value.Item2 == fields.ElementAt(1))
+                if(value.Item1 == fields.ElementAt(0) && value.Item2 == fields.ElementAt(1) &&
+                    value.Item3 == fields.ElementAt(2) && value.Item4 == fields.ElementAt(3))
                 {
                     foundValue = value;
                     break;
