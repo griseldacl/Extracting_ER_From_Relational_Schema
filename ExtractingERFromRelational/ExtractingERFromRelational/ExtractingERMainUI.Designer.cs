@@ -28,46 +28,23 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.addRelationButton = new System.Windows.Forms.ToolStripButton();
             this.panel1 = new System.Windows.Forms.Panel();
             this.relationsDataGrid = new System.Windows.Forms.DataGridView();
-            this.button1 = new System.Windows.Forms.Button();
-            this.startTransformationButton = new System.Windows.Forms.Button();
-            this.toolStrip1.SuspendLayout();
+            this.reverseEngineer = new System.Windows.Forms.Button();
+            this.stage_2_ForeignKey_button = new System.Windows.Forms.Button();
+            this.stage_3_Weak_Entities_Button = new System.Windows.Forms.Button();
+            this.stage_4_Relations_Button = new System.Windows.Forms.Button();
+            this.functionalDependencies = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.relationsDataGrid)).BeginInit();
             this.SuspendLayout();
             // 
-            // toolStrip1
-            // 
-            this.toolStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.addRelationButton});
-            this.toolStrip1.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow;
-            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
-            this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(527, 27);
-            this.toolStrip1.TabIndex = 0;
-            this.toolStrip1.Text = "toolStrip1";
-            // 
-            // addRelationButton
-            // 
-            this.addRelationButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.addRelationButton.Image = global::ExtractingERFromRelational.Properties.Resources.Add_Icon;
-            this.addRelationButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.addRelationButton.Name = "addRelationButton";
-            this.addRelationButton.Size = new System.Drawing.Size(24, 24);
-            this.addRelationButton.Text = "Add Relation";
-            this.addRelationButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.addRelationButton.Click += new System.EventHandler(this.addRelationButton_Click);
-            // 
             // panel1
             // 
             this.panel1.Controls.Add(this.relationsDataGrid);
-            this.panel1.Location = new System.Drawing.Point(12, 67);
+            this.panel1.Location = new System.Drawing.Point(12, 51);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(499, 169);
+            this.panel1.Size = new System.Drawing.Size(715, 205);
             this.panel1.TabIndex = 1;
             // 
             // relationsDataGrid
@@ -79,60 +56,88 @@
             this.relationsDataGrid.Location = new System.Drawing.Point(0, 0);
             this.relationsDataGrid.Name = "relationsDataGrid";
             this.relationsDataGrid.ReadOnly = true;
-            this.relationsDataGrid.Size = new System.Drawing.Size(499, 169);
+            this.relationsDataGrid.Size = new System.Drawing.Size(715, 205);
             this.relationsDataGrid.TabIndex = 0;
             // 
-            // button1
+            // reverseEngineer
             // 
-            this.button1.Location = new System.Drawing.Point(321, 6);
-            this.button1.Margin = new System.Windows.Forms.Padding(2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(56, 19);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "FK_TEST";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.reverseEngineer.Location = new System.Drawing.Point(12, 22);
+            this.reverseEngineer.Name = "reverseEngineer";
+            this.reverseEngineer.Size = new System.Drawing.Size(162, 23);
+            this.reverseEngineer.TabIndex = 5;
+            this.reverseEngineer.Text = "Stage-1 Entity Identification";
+            this.reverseEngineer.UseVisualStyleBackColor = true;
+            this.reverseEngineer.Click += new System.EventHandler(this.stage_1_Entities_Identification_Click);
             // 
-            // startTransformationButton
+            // stage_2_ForeignKey_button
             // 
-            this.startTransformationButton.Location = new System.Drawing.Point(175, 4);
-            this.startTransformationButton.Name = "startTransformationButton";
-            this.startTransformationButton.Size = new System.Drawing.Size(141, 23);
-            this.startTransformationButton.TabIndex = 4;
-            this.startTransformationButton.Text = "Start Transformation";
-            this.startTransformationButton.UseVisualStyleBackColor = true;
-            this.startTransformationButton.Click += new System.EventHandler(this.startTransformationButton_Click);
+            this.stage_2_ForeignKey_button.Location = new System.Drawing.Point(180, 22);
+            this.stage_2_ForeignKey_button.Name = "stage_2_ForeignKey_button";
+            this.stage_2_ForeignKey_button.Size = new System.Drawing.Size(117, 23);
+            this.stage_2_ForeignKey_button.TabIndex = 6;
+            this.stage_2_ForeignKey_button.Text = "Stage-2 Foreign Key";
+            this.stage_2_ForeignKey_button.UseVisualStyleBackColor = true;
+            this.stage_2_ForeignKey_button.Click += new System.EventHandler(this.stage_2_ForeignKey_button_Click);
+            // 
+            // stage_3_Weak_Entities_Button
+            // 
+            this.stage_3_Weak_Entities_Button.Location = new System.Drawing.Point(303, 22);
+            this.stage_3_Weak_Entities_Button.Name = "stage_3_Weak_Entities_Button";
+            this.stage_3_Weak_Entities_Button.Size = new System.Drawing.Size(127, 23);
+            this.stage_3_Weak_Entities_Button.TabIndex = 7;
+            this.stage_3_Weak_Entities_Button.Text = "Stage-3 Weak Entites";
+            this.stage_3_Weak_Entities_Button.UseVisualStyleBackColor = true;
+            this.stage_3_Weak_Entities_Button.Click += new System.EventHandler(this.stage_3_Weak_Entities_Button_Click);
+            // 
+            // stage_4_Relations_Button
+            // 
+            this.stage_4_Relations_Button.Location = new System.Drawing.Point(436, 22);
+            this.stage_4_Relations_Button.Name = "stage_4_Relations_Button";
+            this.stage_4_Relations_Button.Size = new System.Drawing.Size(127, 23);
+            this.stage_4_Relations_Button.TabIndex = 8;
+            this.stage_4_Relations_Button.Text = "Stage-4 Relations";
+            this.stage_4_Relations_Button.UseVisualStyleBackColor = true;
+            this.stage_4_Relations_Button.Click += new System.EventHandler(this.stage_4_Relations_Button_Click);
+            // 
+            // functionalDependencies
+            // 
+            this.functionalDependencies.Location = new System.Drawing.Point(587, 21);
+            this.functionalDependencies.Name = "functionalDependencies";
+            this.functionalDependencies.Size = new System.Drawing.Size(140, 23);
+            this.functionalDependencies.TabIndex = 9;
+            this.functionalDependencies.Text = "Functional Dependencies";
+            this.functionalDependencies.UseVisualStyleBackColor = true;
+            this.functionalDependencies.Click += new System.EventHandler(this.functionalDependencies_Click);
             // 
             // ExtractingERMainUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(527, 253);
-            this.Controls.Add(this.startTransformationButton);
-            this.Controls.Add(this.button1);
+            this.ClientSize = new System.Drawing.Size(739, 266);
+            this.Controls.Add(this.functionalDependencies);
+            this.Controls.Add(this.stage_4_Relations_Button);
+            this.Controls.Add(this.stage_3_Weak_Entities_Button);
+            this.Controls.Add(this.stage_2_ForeignKey_button);
+            this.Controls.Add(this.reverseEngineer);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.toolStrip1);
             this.MaximizeBox = false;
             this.Name = "ExtractingERMainUI";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ER-To-Relational-Model";
-            this.toolStrip1.ResumeLayout(false);
-            this.toolStrip1.PerformLayout();
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.relationsDataGrid)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.ToolStrip toolStrip1;
-        private System.Windows.Forms.ToolStripButton addRelationButton;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.DataGridView relationsDataGrid;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button startTransformationButton;
+        private System.Windows.Forms.Button reverseEngineer;
+        private System.Windows.Forms.Button stage_2_ForeignKey_button;
+        private System.Windows.Forms.Button stage_3_Weak_Entities_Button;
+        private System.Windows.Forms.Button stage_4_Relations_Button;
+        private System.Windows.Forms.Button functionalDependencies;
     }
 }
 
